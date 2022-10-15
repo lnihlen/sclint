@@ -1,10 +1,15 @@
 #### fmt
+if(WASM)
+    set(FMT_OS OFF CACHE BOOL "disable OS features in fmt library")
+endif()
 add_subdirectory(fmt)
 
 #### gflags
+if(NOT WASM)
 set(GFLAGS_BUILD_STATIC_LIBS ON CACHE BOOL "build gflags as a static library")
 set(GFLAGS_BUILD_gflags_LIB ON CACHE BOOL "build multithreaded gflags library")
 add_subdirectory(gflags)
+endif()
 
 #### rapidjson
 set(RAPIDJSON_BUILD_DOC OFF CACHE BOOL "skip building rapidjson docs")

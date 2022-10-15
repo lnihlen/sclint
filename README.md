@@ -1,2 +1,2 @@
-# sclint
-Prototype linter/formatter for SuperCollider code
+# sclint - An ANTLR-based SuperCollider language linter
+

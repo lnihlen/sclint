@@ -6,6 +6,7 @@ add_subdirectory(lint)
 
 #############
 # sclint
+if(NOT WASM)
 add_executable(sclint
     sclint.cpp
 )
@@ -22,3 +23,4 @@ target_compile_options(sclint PRIVATE
      $<$<CXX_COMPILER_ID:MSVC>:
      /W4 /WX /DNOMINMAX>
 )
+endif()
